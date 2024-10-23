@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "33251294012",
+    "project_id": "chatbotai-97368",
+    "storage_bucket": "chatbotai-97368.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:33251294012:android:4928d3ea848753613e7c39",
+        "android_client_info": {
+          "package_name": "com.composeapp.aibotapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "33251294012-hpembc109vnnrlrrglfrnbj302v1sstb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFvVHsACfJax6fCaB75dx9VCgXqVBeFWM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "33251294012-hpembc109vnnrlrrglfrnbj302v1sstb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
