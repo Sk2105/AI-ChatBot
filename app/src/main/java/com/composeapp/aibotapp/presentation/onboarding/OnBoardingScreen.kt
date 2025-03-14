@@ -24,7 +24,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
-import com.composeapp.aibotapp.MainViewModel
 import com.composeapp.aibotapp.data.onboarding.onBoardingList
 import com.composeapp.aibotapp.presentation.navigation.routes.AppRoute
 import com.composeapp.aibotapp.presentation.onboarding.components.OnBoardingPage
@@ -32,7 +31,7 @@ import kotlinx.coroutines.launch
 
 
 @Composable
-fun OnBoardingScreen(viewModel: MainViewModel,navigator: NavHostController) {
+fun OnBoardingScreen(navigator: NavHostController) {
     val pagerState = rememberPagerState(
         pageCount = { 3 },
         initialPage = 0

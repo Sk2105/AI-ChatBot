@@ -19,3 +19,10 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+
+-keep class dagger.hilt.internal.aggregatedroot.codegen._com_composeapp_aibotapp_application_App
+-keep class dagger.hilt.internal.aggregatedroot.codegen._com_composeapp_aibotapp_application_App.*
+-keepclassmembers class dagger.hilt.internal.aggregatedroot.codegen._com_composeapp_aibotapp_application_App {
+    public *;
+}

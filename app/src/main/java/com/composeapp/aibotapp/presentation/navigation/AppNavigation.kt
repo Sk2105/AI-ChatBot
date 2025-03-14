@@ -24,7 +24,7 @@ fun AppNavigation(route: AppRoute = AppRoute.Splash) {
         navigation<AppRoute.Splash>(startDestination = AppRoute.OnBoarding) {
 
             composable<AppRoute.OnBoarding> {
-                OnBoardingScreen(viewModel, navigator)
+                OnBoardingScreen(navigator)
             }
 
             composable<AppRoute.Auth> {
