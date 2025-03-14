@@ -31,7 +31,7 @@ AIBotApp is a mobile application that uses the Google Gemini API to provide AI-p
     <img src="./images/Login_dark.jpg" alt="Login Screen" width="250" height="500">
     <img src="./images/Login_light.jpg" alt="Login Screen" width="250" height="500">
     <img src="./images/Chat_dark.jpg" alt="Login Screen" width="250" height="500">
-    <img src="./images/Chat_light.jpg" alt="Login Screen" width="250" height="500">
+    <img src="./images/Chat_Light.jpg" alt="Login Screen" width="250" height="500">
     <img src="./images/Progress_Light.jpg" alt="Login Screen" width="250" height="500">
     <img src="./images/Navigation_dark.jpg" alt="Login Screen" width="250" height="500">
     <img src="./images/Navigation_light.jpg" alt="Login Screen" width="250" height="500">
