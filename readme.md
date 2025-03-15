@@ -46,6 +46,3 @@ AIBotApp is a mobile application that uses the Google Gemini API to provide AI-p
 3. Add your Firebase configuration to the `google-services.json` file
 4. Build and run the app
 
-
-
-MIT License
