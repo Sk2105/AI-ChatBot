@@ -59,7 +59,7 @@ object AppModule {
     @Provides
     fun providesGeminiAI(): GenerativeModel {
         return GenerativeModel(
-            modelName = "gemini-1.5-flash",
+            modelName = "gemini-2.5-flash",
             apiKey = BASE_API_KEY
         )
     }

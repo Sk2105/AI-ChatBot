@@ -43,7 +43,7 @@ import com.composeapp.aibotapp.R
 
 // Enum to define different Markdown token types
 enum class MarkdownTokenType {
-    TEXT, LINK, BLOCKQUOTE, LIST_ITEM, TABLE, BLOCK_CODE, HEADER, HEADER2, HEADER3
+    TEXT, LINK, BLOCKQUOTE, LIST_ITEM, TABLE, BLOCK_CODE, HEADER, HEADER2, HEADER3, LINE
 }
 
 
@@ -67,6 +67,7 @@ data class ParsedText(
 class MarkdownParser {
 
     companion object {
+        const val LINE_TXT = "---"
         const val LIST_ITEM_PREFIX = "- "
         const val LIST_ITEM_PREFIX2 = "* "
         const val INLINE_CODE_PREFIX = "`"
@@ -196,6 +197,11 @@ class MarkdownParser {
                         line.drop(line.indexOf(LINK_SUFFIX) + 1).removePrefix("(").removeSuffix(")")
                             .trim()
                     list.add(ParsedLine(MarkdownTokenType.LINK, content))
+                }
+
+                line.trim().startsWith(LINE_TXT) -> {
+                    val content = line.trim()
+                    list.add(ParsedLine(MarkdownTokenType.LINE, content))
                 }
 
                 else -> {
@@ -373,12 +379,22 @@ fun MarkdownContent(lines: List<ParsedLine>, modifier: Modifier) {
                     MarkdownTokenType.HEADER -> Header(content = line.content)
                     MarkdownTokenType.HEADER2 -> Header2(content = line.content)
                     MarkdownTokenType.HEADER3 -> Header3(content = line.content)
+                    MarkdownTokenType.LINE -> AddLine()
                 }
             }
-
         }
-
     }
+}
+
+@Composable
+fun AddLine() {
+    Box(
+        modifier = Modifier
+            .padding(vertical = 8.dp)
+            .fillMaxWidth()
+            .height(0.5.dp)
+            .background(MaterialTheme.colorScheme.onPrimaryContainer)
+    )
 }
 
 @OptIn(ExperimentalLayoutApi::class)

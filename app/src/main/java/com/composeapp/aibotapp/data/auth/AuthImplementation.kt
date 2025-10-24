@@ -19,6 +19,7 @@ class AuthImplementation @Inject constructor(
         onError: (e: Exception) -> Unit
     ) {
         val account: GoogleSignInAccount = task.getResult(ApiException::class.java)!!
+        print("Error : ${account.email}")
         if(account.idToken == null){
             onError(Exception("Id token is null"))
             return
@@ -31,6 +32,7 @@ class AuthImplementation @Inject constructor(
             println("User: $user")
             onSuccess()
         } else {
+
             onError(Exception("Authentication failed."))
         }
 

@@ -71,6 +71,7 @@ fun AuthScreen(
             try {
                 val task =
                     GoogleSignIn.getSignedInAccountFromIntent(res.data)
+                print("Task ${task.isSuccessful}")
                 if (task.isSuccessful) {
 
                     viewModel.logInWithGoogle(task, onSuccess = {
@@ -94,6 +95,7 @@ fun AuthScreen(
                             Dispatchers.Main
                         ) {
                             withContext(Dispatchers.Main) {
+                                print("Error ${task.exception?.message}")
                                 Toast.makeText(
                                     context,
                                     "Login Failed : ${it.message}",
@@ -110,9 +112,10 @@ fun AuthScreen(
                         Dispatchers.Main
                     ) {
                         withContext(Dispatchers.Main) {
+                            print("Error ${task.exception?.message}")
                             Toast.makeText(
                                 context,
-                                task.exception?.message,
+                                "Error : "+task.exception?.message,
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
@@ -125,7 +128,7 @@ fun AuthScreen(
                 authState = false
                 Toast.makeText(
                     context,
-                    e.message,
+                    "Error ${e.message}",
                     Toast.LENGTH_SHORT
                 ).show()
                 e.printStackTrace()
